@@ -9,7 +9,7 @@ Etherpad is a really-real time collaborative editor scalable to thousands of sim
 # Installation
 
 ## Requirements
-- `nodejs` >= **6.9.0** (preferred: `nodejs` >= **8.9**)
+- `nodejs` >= **8.9.0**
 
 ## Uber-Quick Ubuntu
 ```
@@ -19,7 +19,7 @@ git clone --branch master https://github.com/ether/etherpad-lite.git && cd ether
 ```
 
 ## GNU/Linux and other UNIX-like systems
-You'll need git and [node.js](https://nodejs.org) installed (minimum required Node version: **6.9.0**, preferred: >= **8.9**).
+You'll need git and [node.js](https://nodejs.org) installed (minimum required Node version: **8.9.0**).
 
 **As any user (we recommend creating a separate user called etherpad):**
 
@@ -65,6 +65,7 @@ If cloning to a subdirectory within another project, you may need to do the foll
 You can modify the settings in `settings.json`.
 If you need to handle multiple settings files, you can pass the path to a settings file to `bin/run.sh` using the `-s|--settings` option: this allows you to run multiple Etherpad instances from the same installation.
 Similarly, `--credentials` can be used to give a settings override file, `--apikey` to give a different APIKEY.txt file and `--sessionkey` to give a non-default SESSIONKEY.txt.
+**Each configuration parameter can also be set via an environment variable**, using the syntax `"${ENV_VAR}"` or `"${ENV_VAR:default_value}"`. For details, refer to `settings.json.template`.
 Once you have access to your /admin section settings can be modified through the web browser.
 
 You should use a dedicated database such as "mysql", if you are planning on using etherpad-in a production environment, since the "dirtyDB" database driver is only for testing and/or development purposes.
